@@ -28,7 +28,7 @@ Partial Class Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(278, 237)
+        Me.ClientSize = New System.Drawing.Size(253, 306)
         Me.Name = "Settings"
         Me.Text = "Settings"
         Me.ResumeLayout(False)

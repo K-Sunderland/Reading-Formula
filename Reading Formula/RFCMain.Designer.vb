@@ -42,7 +42,7 @@ Partial Class RFCalc
         Me.Main_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Main_Title.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Main_Title.ForeColor = System.Drawing.Color.Black
-        Me.Main_Title.Location = New System.Drawing.Point(2, 52)
+        Me.Main_Title.Location = New System.Drawing.Point(2, 43)
         Me.Main_Title.Name = "Main_Title"
         Me.Main_Title.Size = New System.Drawing.Size(225, 70)
         Me.Main_Title.TabIndex = 0
@@ -52,7 +52,7 @@ Partial Class RFCalc
         '
         Me.Book_Level.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Book_Level.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Book_Level.Location = New System.Drawing.Point(10, 282)
+        Me.Book_Level.Location = New System.Drawing.Point(10, 218)
         Me.Book_Level.Name = "Book_Level"
         Me.Book_Level.Size = New System.Drawing.Size(124, 20)
         Me.Book_Level.TabIndex = 3
@@ -62,7 +62,7 @@ Partial Class RFCalc
         '
         Me.Book_Pages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Book_Pages.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Book_Pages.Location = New System.Drawing.Point(10, 228)
+        Me.Book_Pages.Location = New System.Drawing.Point(10, 169)
         Me.Book_Pages.Name = "Book_Pages"
         Me.Book_Pages.Size = New System.Drawing.Size(124, 20)
         Me.Book_Pages.TabIndex = 2
@@ -73,7 +73,7 @@ Partial Class RFCalc
         Me.Book_Talk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Book_Talk.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Book_Talk.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Book_Talk.Location = New System.Drawing.Point(10, 167)
+        Me.Book_Talk.Location = New System.Drawing.Point(10, 121)
         Me.Book_Talk.Name = "Book_Talk"
         Me.Book_Talk.Size = New System.Drawing.Size(124, 22)
         Me.Book_Talk.TabIndex = 1
@@ -83,7 +83,7 @@ Partial Class RFCalc
         '
         Me.Student_Level.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Student_Level.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Student_Level.Location = New System.Drawing.Point(10, 340)
+        Me.Student_Level.Location = New System.Drawing.Point(10, 267)
         Me.Student_Level.Name = "Student_Level"
         Me.Student_Level.Size = New System.Drawing.Size(124, 20)
         Me.Student_Level.TabIndex = 4
@@ -95,7 +95,7 @@ Partial Class RFCalc
         Me.EnterBtn.Cursor = System.Windows.Forms.Cursors.Default
         Me.EnterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.EnterBtn.Font = New System.Drawing.Font("Mechanical", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EnterBtn.Location = New System.Drawing.Point(22, 403)
+        Me.EnterBtn.Location = New System.Drawing.Point(26, 340)
         Me.EnterBtn.Name = "EnterBtn"
         Me.EnterBtn.Size = New System.Drawing.Size(80, 30)
         Me.EnterBtn.TabIndex = 5
@@ -106,7 +106,7 @@ Partial Class RFCalc
         '
         Me.Output.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Output.ForeColor = System.Drawing.Color.Black
-        Me.Output.Location = New System.Drawing.Point(10, 363)
+        Me.Output.Location = New System.Drawing.Point(10, 300)
         Me.Output.Name = "Output"
         Me.Output.Size = New System.Drawing.Size(124, 37)
         Me.Output.TabIndex = 11
