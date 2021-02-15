@@ -28,12 +28,15 @@ Partial Class RFCalc
         Me.Book_Pages = New System.Windows.Forms.TextBox()
         Me.Book_Talk = New System.Windows.Forms.TextBox()
         Me.Student_Level = New System.Windows.Forms.TextBox()
-        Me.EnterBtn = New System.Windows.Forms.Button()
         Me.Output = New System.Windows.Forms.Label()
         Me.FormExit = New System.Windows.Forms.Button()
         Me.FormMinimize = New System.Windows.Forms.Button()
         Me.Dock = New System.Windows.Forms.CheckBox()
         Me.About = New System.Windows.Forms.Button()
+        Me.Pre_Points = New System.Windows.Forms.TextBox()
+        Me.EnterBtn = New System.Windows.Forms.Button()
+        Me.OutputAdded = New System.Windows.Forms.Label()
+        Me.Calculate_Addition = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Main_Title
@@ -42,7 +45,7 @@ Partial Class RFCalc
         Me.Main_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Main_Title.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Main_Title.ForeColor = System.Drawing.Color.Black
-        Me.Main_Title.Location = New System.Drawing.Point(2, 43)
+        Me.Main_Title.Location = New System.Drawing.Point(0, 37)
         Me.Main_Title.Name = "Main_Title"
         Me.Main_Title.Size = New System.Drawing.Size(225, 70)
         Me.Main_Title.TabIndex = 0
@@ -52,7 +55,7 @@ Partial Class RFCalc
         '
         Me.Book_Level.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Book_Level.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Book_Level.Location = New System.Drawing.Point(10, 218)
+        Me.Book_Level.Location = New System.Drawing.Point(10, 188)
         Me.Book_Level.Name = "Book_Level"
         Me.Book_Level.Size = New System.Drawing.Size(124, 20)
         Me.Book_Level.TabIndex = 3
@@ -62,7 +65,7 @@ Partial Class RFCalc
         '
         Me.Book_Pages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Book_Pages.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Book_Pages.Location = New System.Drawing.Point(10, 169)
+        Me.Book_Pages.Location = New System.Drawing.Point(10, 150)
         Me.Book_Pages.Name = "Book_Pages"
         Me.Book_Pages.Size = New System.Drawing.Size(124, 20)
         Me.Book_Pages.TabIndex = 2
@@ -73,7 +76,7 @@ Partial Class RFCalc
         Me.Book_Talk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Book_Talk.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Book_Talk.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Book_Talk.Location = New System.Drawing.Point(10, 121)
+        Me.Book_Talk.Location = New System.Drawing.Point(10, 110)
         Me.Book_Talk.Name = "Book_Talk"
         Me.Book_Talk.Size = New System.Drawing.Size(124, 22)
         Me.Book_Talk.TabIndex = 1
@@ -83,30 +86,17 @@ Partial Class RFCalc
         '
         Me.Student_Level.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Student_Level.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Student_Level.Location = New System.Drawing.Point(10, 267)
+        Me.Student_Level.Location = New System.Drawing.Point(10, 224)
         Me.Student_Level.Name = "Student_Level"
         Me.Student_Level.Size = New System.Drawing.Size(124, 20)
         Me.Student_Level.TabIndex = 4
         Me.Student_Level.Text = "Student Level"
         '
-        'EnterBtn
-        '
-        Me.EnterBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.EnterBtn.Cursor = System.Windows.Forms.Cursors.Default
-        Me.EnterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.EnterBtn.Font = New System.Drawing.Font("Mechanical", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EnterBtn.Location = New System.Drawing.Point(26, 340)
-        Me.EnterBtn.Name = "EnterBtn"
-        Me.EnterBtn.Size = New System.Drawing.Size(80, 30)
-        Me.EnterBtn.TabIndex = 5
-        Me.EnterBtn.Text = "Calculate!"
-        Me.EnterBtn.UseVisualStyleBackColor = False
-        '
         'Output
         '
         Me.Output.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Output.ForeColor = System.Drawing.Color.Black
-        Me.Output.Location = New System.Drawing.Point(10, 300)
+        Me.Output.Location = New System.Drawing.Point(10, 287)
         Me.Output.Name = "Output"
         Me.Output.Size = New System.Drawing.Size(124, 37)
         Me.Output.TabIndex = 11
@@ -170,12 +160,62 @@ Partial Class RFCalc
         Me.About.Text = "About"
         Me.About.UseVisualStyleBackColor = True
         '
+        'Pre_Points
+        '
+        Me.Pre_Points.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Pre_Points.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Pre_Points.Location = New System.Drawing.Point(10, 327)
+        Me.Pre_Points.Name = "Pre_Points"
+        Me.Pre_Points.Size = New System.Drawing.Size(124, 20)
+        Me.Pre_Points.TabIndex = 18
+        Me.Pre_Points.Text = "Pre Points"
+        '
+        'EnterBtn
+        '
+        Me.EnterBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.EnterBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.EnterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.EnterBtn.Font = New System.Drawing.Font("Mechanical", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EnterBtn.Location = New System.Drawing.Point(29, 254)
+        Me.EnterBtn.Name = "EnterBtn"
+        Me.EnterBtn.Size = New System.Drawing.Size(80, 30)
+        Me.EnterBtn.TabIndex = 5
+        Me.EnterBtn.Text = "Calculate!"
+        Me.EnterBtn.UseVisualStyleBackColor = False
+        '
+        'OutputAdded
+        '
+        Me.OutputAdded.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OutputAdded.ForeColor = System.Drawing.Color.Black
+        Me.OutputAdded.Location = New System.Drawing.Point(10, 386)
+        Me.OutputAdded.Name = "OutputAdded"
+        Me.OutputAdded.Size = New System.Drawing.Size(124, 37)
+        Me.OutputAdded.TabIndex = 19
+        Me.OutputAdded.Text = "000"
+        Me.OutputAdded.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Calculate_Addition
+        '
+        Me.Calculate_Addition.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Calculate_Addition.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Calculate_Addition.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Calculate_Addition.Font = New System.Drawing.Font("Mechanical", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Calculate_Addition.Location = New System.Drawing.Point(29, 353)
+        Me.Calculate_Addition.Name = "Calculate_Addition"
+        Me.Calculate_Addition.Size = New System.Drawing.Size(80, 30)
+        Me.Calculate_Addition.TabIndex = 20
+        Me.Calculate_Addition.Text = "Calculate!"
+        Me.Calculate_Addition.UseVisualStyleBackColor = False
+        '
         'RFCalc
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(327, 456)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Calculate_Addition)
+        Me.Controls.Add(Me.OutputAdded)
+        Me.Controls.Add(Me.Pre_Points)
         Me.Controls.Add(Me.About)
         Me.Controls.Add(Me.Dock)
         Me.Controls.Add(Me.FormMinimize)
@@ -205,10 +245,13 @@ Partial Class RFCalc
     Friend WithEvents Book_Pages As TextBox
     Friend WithEvents Book_Talk As TextBox
     Friend WithEvents Student_Level As TextBox
-    Friend WithEvents EnterBtn As Button
     Friend WithEvents Output As Label
     Friend WithEvents FormExit As Button
     Friend WithEvents FormMinimize As Button
     Friend WithEvents Dock As CheckBox
     Friend WithEvents About As Button
+    Friend WithEvents Pre_Points As TextBox
+    Friend WithEvents EnterBtn As Button
+    Friend WithEvents OutputAdded As Label
+    Friend WithEvents Calculate_Addition As Button
 End Class

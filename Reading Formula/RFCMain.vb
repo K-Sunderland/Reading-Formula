@@ -60,6 +60,8 @@ Public Class RFCalc
         If Asc(e.KeyChar) = Keys.Enter Then
             If Book_Talk.Text.Trim() <> "" Then
                 Book_Pages.Focus()
+                Output.Text = "000"
+                OutputAdded.Text = "000"
             End If
         End If
         Select Case e.KeyChar
@@ -82,6 +84,7 @@ Public Class RFCalc
             End Select
         End If
     End Sub
+
     Private Sub StudentLevel_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Student_Level.KeyPress
         If Asc(e.KeyChar) = Keys.Enter Then
             If Student_Level.Text.Trim() <> "" Then
@@ -95,7 +98,20 @@ Public Class RFCalc
                 e.Handled = True
         End Select
     End Sub
+    Private Sub Pre_Points_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Pre_Points.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            If Pre_Points.Text.Trim() <> "" Then
+                CalculateAddition()
+            End If
+        End If
+        Select Case e.KeyChar
+            Case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", vbBack
+                e.Handled = False
+            Case Else
+                e.Handled = True
+        End Select
 
+    End Sub
     Function calculate()
         Dim BT = Book_Talk.Text
         Dim BP = Book_Pages.Text
@@ -109,6 +125,19 @@ Public Class RFCalc
         Else
             ' calculator
             Output.Text = Math.Round(BT * BP * BL / SL / 50)
+
+            Pre_Points.Focus()
+            Return Nothing
+        End If
+    End Function
+    Function CalculateAddition()
+
+
+        If Pre_Points.Text <> "Pre Points" And Pre_Points.Text <> "" And Output.Text <> "000" Then
+            Dim regOut As Integer = Output.Text
+            Dim PP As Integer = Pre_Points.Text
+            OutputAdded.Text = regOut + PP
+            ' reset
             Book_Talk.Text = "Book Talk"
             Book_Talk.ForeColor = SystemColors.ControlDark
             Book_Pages.Text = "Book Pages"
@@ -117,12 +146,14 @@ Public Class RFCalc
             Book_Level.ForeColor = SystemColors.ControlDark
             Student_Level.Text = "Student Level"
             Student_Level.ForeColor = SystemColors.ControlDark
+            Pre_Points.Text = "Pre Points"
+            Pre_Points.ForeColor = SystemColors.ControlDark
             Book_Talk.Focus()
             Return Nothing
+        Else
+            MsgBox("Fill in all boxes.")
         End If
     End Function
-
-
 
 
     ' checks for change in docked state & applies topMost
@@ -202,14 +233,26 @@ Public Class RFCalc
     '
     ' Student Level Placeholder
     '
-    Private Sub StudentLevel_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Student_Level.GotFocus
+    Private Sub StudentLevel_GotFocus(sender As System.Object, e As System.EventArgs) Handles Student_Level.GotFocus
         PlaceHolder(Student_Level, True)
     End Sub
-    Private Sub StudentLevel_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Student_Level.LostFocus
+    Private Sub StudentLevel_LostFocus(sender As System.Object, e As System.EventArgs) Handles Student_Level.LostFocus
         PlaceHolder(Student_Level, False)
     End Sub
-
+    '
+    ' Pre Points Placeholder
+    '
+    Private Sub Pre_Points_GotFocus(sender As Object, e As EventArgs) Handles Pre_Points.GotFocus
+        PlaceHolder(Pre_Points, True)
+    End Sub
+    Private Sub Pre_Points_LostFocus(sender As Object, e As EventArgs) Handles Pre_Points.LostFocus
+        PlaceHolder(Pre_Points, False)
+    End Sub
     Private Sub About_Click(sender As Object, e As EventArgs) Handles About.Click
         AboutForm.Show()
+    End Sub
+
+    Private Sub Calculate_Addition_Click(sender As Object, e As EventArgs) Handles Calculate_Addition.Click
+        CalculateAddition()
     End Sub
 End Class
