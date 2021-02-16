@@ -43,7 +43,7 @@ Partial Class RFCalc
         Me.Main_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Main_Title.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Main_Title.ForeColor = System.Drawing.Color.Black
-        Me.Main_Title.Location = New System.Drawing.Point(0, 37)
+        Me.Main_Title.Location = New System.Drawing.Point(4, 37)
         Me.Main_Title.Name = "Main_Title"
         Me.Main_Title.Size = New System.Drawing.Size(225, 70)
         Me.Main_Title.TabIndex = 0
@@ -151,7 +151,7 @@ Partial Class RFCalc
         '
         Me.About.Font = New System.Drawing.Font("Mechanical", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.About.ForeColor = System.Drawing.Color.Black
-        Me.About.Location = New System.Drawing.Point(6, 1)
+        Me.About.Location = New System.Drawing.Point(5, 4)
         Me.About.Name = "About"
         Me.About.Size = New System.Drawing.Size(75, 23)
         Me.About.TabIndex = 17
