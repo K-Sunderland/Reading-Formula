@@ -1,5 +1,13 @@
 ﻿Imports System.Runtime.InteropServices
 
+
+' module to embed custom font
+Imports System.IO
+Imports System.Reflection
+Imports System.Drawing.Text
+
+
+
 Public Class RFCalc
     ' copied from stackoverflow ;)
     ' handles window movement for borderless form
@@ -30,6 +38,8 @@ Public Class RFCalc
     Private Sub RFCalc_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Main_Title.Focus()
         formRegion = New Rectangle(0, 0, 327, 456)
+
+
     End Sub
 
 
@@ -61,6 +71,7 @@ Public Class RFCalc
             If Book_Talk.Text.Trim() <> "" Then
                 Book_Pages.Focus()
                 Output.Text = "000"
+                OutputAdded.Text = "000"
             End If
         End If
         Select Case e.KeyChar
@@ -87,7 +98,7 @@ Public Class RFCalc
     Private Sub StudentLevel_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Student_Level.KeyPress
         If Asc(e.KeyChar) = Keys.Enter Then
             If Student_Level.Text.Trim() <> "" Then
-                Pre_Points.Focus()
+                calculate()
             End If
         End If
         Select Case e.KeyChar
@@ -100,7 +111,7 @@ Public Class RFCalc
     Private Sub Pre_Points_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Pre_Points.KeyPress
         If Asc(e.KeyChar) = Keys.Enter Then
             If Pre_Points.Text.Trim() <> "" Then
-                calculate()
+                CalculateAddition()
             End If
         End If
         Select Case e.KeyChar
@@ -116,15 +127,26 @@ Public Class RFCalc
         Dim BP = Book_Pages.Text
         Dim BL = Book_Level.Text
         Dim SL = Student_Level.Text
-        Dim PP = Pre_Points.Text
         ' checks for unchanged values
-        If Book_Talk.Text = "Book Talk" Or Book_Pages.Text = "Book Pages" Or Book_Level.Text = "Book Level" Or Student_Level.Text = "Student Level" Or Pre_Points.Text = "Pre Points" Then
+        If Book_Talk.Text = "Book Talk" Or Book_Pages.Text = "Book Pages" Or Book_Level.Text = "Book Level" Or Student_Level.Text = "Student Level" Then
             MsgBox("Please fill in all boxes")
             Return Nothing
 
         Else
             ' calculator
-            Output.Text = Math.Round(BT * BP * BL / SL / 50) + Pre_Points.Text
+            Output.Text = Math.Round(BT * BP * BL / SL / 50)
+
+            Pre_Points.Focus()
+            Return Nothing
+        End If
+    End Function
+    Function CalculateAddition()
+
+
+        If Pre_Points.Text <> "Pre Points" And Pre_Points.Text <> "" And Output.Text <> "000" Then
+            Dim regOut As Integer = Output.Text
+            Dim PP As Integer = Pre_Points.Text
+            OutputAdded.Text = regOut + PP
             ' reset
             Book_Talk.Text = "Book Talk"
             Book_Talk.ForeColor = SystemColors.ControlDark
@@ -138,10 +160,11 @@ Public Class RFCalc
             Pre_Points.ForeColor = SystemColors.ControlDark
             Book_Talk.Focus()
             Return Nothing
-            Book_Talk.Focus()
-            Return Nothing
+        Else
+            MsgBox("Fill in all boxes.")
         End If
     End Function
+
 
     ' checks for change in docked state & applies topMost
     Private Sub Dock_CheckedChanged(sender As Object, e As EventArgs) Handles Dock.CheckedChanged
@@ -236,7 +259,19 @@ Public Class RFCalc
         PlaceHolder(Pre_Points, False)
     End Sub
     Private Sub About_Click(sender As Object, e As EventArgs) Handles About.Click
-        AboutForm.Show()
+        Dim aboutElement As New AboutForm
+        Dim mePos As Point = Me.Location
+        Me.TopMost = True
+        aboutElement.TopMost = True
+        aboutElement.StartPosition = FormStartPosition.Manual
+        aboutElement.Location = New Point((mePos.X + Me.Width) - Me.Width / 2 - aboutElement.Width / 2, (mePos.Y + Me.Height) - Me.Height / 2 - aboutElement.Height / 2)
+        Me.Enabled = False
+        aboutElement.Show()
     End Sub
+
+    Private Sub Calculate_Addition_Click(sender As Object, e As EventArgs)
+        CalculateAddition()
+    End Sub
+
 
 End Class

@@ -34,7 +34,7 @@ Partial Class RFCalc
         Me.Dock = New System.Windows.Forms.CheckBox()
         Me.About = New System.Windows.Forms.Button()
         Me.Pre_Points = New System.Windows.Forms.TextBox()
-        Me.Calculate_Addition = New System.Windows.Forms.Button()
+        Me.OutputAdded = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Main_Title
@@ -43,7 +43,7 @@ Partial Class RFCalc
         Me.Main_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Main_Title.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Main_Title.ForeColor = System.Drawing.Color.Black
-        Me.Main_Title.Location = New System.Drawing.Point(0, 37)
+        Me.Main_Title.Location = New System.Drawing.Point(4, 37)
         Me.Main_Title.Name = "Main_Title"
         Me.Main_Title.Size = New System.Drawing.Size(225, 70)
         Me.Main_Title.TabIndex = 0
@@ -94,7 +94,7 @@ Partial Class RFCalc
         '
         Me.Output.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Output.ForeColor = System.Drawing.Color.Black
-        Me.Output.Location = New System.Drawing.Point(10, 335)
+        Me.Output.Location = New System.Drawing.Point(10, 247)
         Me.Output.Name = "Output"
         Me.Output.Size = New System.Drawing.Size(124, 37)
         Me.Output.TabIndex = 11
@@ -162,24 +162,22 @@ Partial Class RFCalc
         '
         Me.Pre_Points.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Pre_Points.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Pre_Points.Location = New System.Drawing.Point(10, 264)
+        Me.Pre_Points.Location = New System.Drawing.Point(10, 287)
         Me.Pre_Points.Name = "Pre_Points"
         Me.Pre_Points.Size = New System.Drawing.Size(124, 20)
         Me.Pre_Points.TabIndex = 18
         Me.Pre_Points.Text = "Pre Points"
         '
-        'Calculate_Addition
+        'OutputAdded
         '
-        Me.Calculate_Addition.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Calculate_Addition.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Calculate_Addition.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Calculate_Addition.Font = New System.Drawing.Font("Mechanical", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Calculate_Addition.Location = New System.Drawing.Point(31, 302)
-        Me.Calculate_Addition.Name = "Calculate_Addition"
-        Me.Calculate_Addition.Size = New System.Drawing.Size(80, 30)
-        Me.Calculate_Addition.TabIndex = 20
-        Me.Calculate_Addition.Text = "Calculate!"
-        Me.Calculate_Addition.UseVisualStyleBackColor = False
+        Me.OutputAdded.Font = New System.Drawing.Font("Mechanical", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OutputAdded.ForeColor = System.Drawing.Color.Black
+        Me.OutputAdded.Location = New System.Drawing.Point(10, 310)
+        Me.OutputAdded.Name = "OutputAdded"
+        Me.OutputAdded.Size = New System.Drawing.Size(124, 37)
+        Me.OutputAdded.TabIndex = 19
+        Me.OutputAdded.Text = "000"
+        Me.OutputAdded.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'RFCalc
         '
@@ -187,7 +185,7 @@ Partial Class RFCalc
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(327, 456)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Calculate_Addition)
+        Me.Controls.Add(Me.OutputAdded)
         Me.Controls.Add(Me.Pre_Points)
         Me.Controls.Add(Me.About)
         Me.Controls.Add(Me.Dock)
@@ -223,5 +221,5 @@ Partial Class RFCalc
     Friend WithEvents Dock As CheckBox
     Friend WithEvents About As Button
     Friend WithEvents Pre_Points As TextBox
-    Friend WithEvents Calculate_Addition As Button
+    Friend WithEvents OutputAdded As Label
 End Class

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Reading Formula", "Reading Formula\Reading Formula.vbproj", "{929225F6-8648-4CEB-9D42-55A2E59A3EA1}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ReadingFormula", "Reading Formula\ReadingFormula.vbproj", "{929225F6-8648-4CEB-9D42-55A2E59A3EA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{376E65DB-0573-4190-881E-69CC39E7CFD7}"
 	ProjectSection(SolutionItems) = preProject
