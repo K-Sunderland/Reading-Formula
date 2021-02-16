@@ -249,8 +249,12 @@ Public Class RFCalc
         aboutElement.StartPosition = FormStartPosition.Manual
         aboutElement.Location = New Point((mePos.X + Me.Width) - Me.Width / 2 - aboutElement.Width / 2, (mePos.Y + Me.Height) - Me.Height / 2 - aboutElement.Height / 2)
         Me.Enabled = False
+        Dim checkState As Boolean = Dock.CheckState
         aboutElement.Show()
 
 
     End Sub
+    Function ReturnCheckState() As Boolean
+        Return Dock.CheckState
+    End Function
 End Class

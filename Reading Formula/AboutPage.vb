@@ -9,7 +9,9 @@ Public Class AboutForm
 
     Private Sub AboutForm_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         RFCalc.Enabled = True
-        RFCalc.TopMost = False
+        Dim PrevCheck As Boolean = RFCalc.ReturnCheckState()
+        RFCalc.TopMost = PrevCheck
+
     End Sub
     Private borderColor As Color = SystemColors.ControlDarkDark
     Private borderWidth As Integer = 2

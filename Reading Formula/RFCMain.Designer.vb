@@ -35,6 +35,7 @@ Partial Class RFCalc
         Me.About = New System.Windows.Forms.Button()
         Me.Pre_Points = New System.Windows.Forms.TextBox()
         Me.Calculate_Addition = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Main_Title
@@ -181,12 +182,24 @@ Partial Class RFCalc
         Me.Calculate_Addition.Text = "Calculate!"
         Me.Calculate_Addition.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Mechanical", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(86, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'RFCalc
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(327, 456)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Calculate_Addition)
         Me.Controls.Add(Me.Pre_Points)
         Me.Controls.Add(Me.About)
@@ -224,4 +237,5 @@ Partial Class RFCalc
     Friend WithEvents About As Button
     Friend WithEvents Pre_Points As TextBox
     Friend WithEvents Calculate_Addition As Button
+    Friend WithEvents Button1 As Button
 End Class
