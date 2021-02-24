@@ -1,6 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 
 
+
 ' module to embed custom font
 Imports System.IO
 Imports System.Reflection
@@ -38,6 +39,10 @@ Public Class RFCalc
     Private Sub RFCalc_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Main_Title.Focus()
         formRegion = New Rectangle(0, 0, 327, 456)
+
+
+
+
 
 
     End Sub
@@ -258,7 +263,19 @@ Public Class RFCalc
     Private Sub Pre_Points_LostFocus(sender As Object, e As EventArgs) Handles Pre_Points.LostFocus
         PlaceHolder(Pre_Points, False)
     End Sub
+
     Private Sub About_Click(sender As Object, e As EventArgs) Handles About.Click
+        Dim aboutElement As New AboutForm
+        Dim mePos As Point = Me.Location
+        Me.TopMost = True
+        aboutElement.TopMost = True
+        aboutElement.StartPosition = FormStartPosition.Manual
+        aboutElement.Location = New Point((mePos.X + Me.Width) - Me.Width / 2 - aboutElement.Width / 2, (mePos.Y + Me.Height) - Me.Height / 2 - aboutElement.Height / 2)
+        Me.Enabled = False
+        Dim checkState As Boolean = Dock.CheckState
+        aboutElement.Show()
+
+
         Dim aboutElement As New AboutForm
         Dim mePos As Point = Me.Location
         Me.TopMost = True
@@ -272,6 +289,9 @@ Public Class RFCalc
     Private Sub Calculate_Addition_Click(sender As Object, e As EventArgs)
         CalculateAddition()
     End Sub
+    Function ReturnCheckState() As Boolean
+        Return Dock.CheckState
+    End Function
 
 
 End Class

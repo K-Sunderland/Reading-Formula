@@ -106,5 +106,4 @@ Partial Class AboutForm
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Formula As Label
-    Friend WithEvents FormExit As Button
 End Class

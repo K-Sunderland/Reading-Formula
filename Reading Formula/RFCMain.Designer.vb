@@ -151,7 +151,7 @@ Partial Class RFCalc
         '
         Me.About.Font = New System.Drawing.Font("Mechanical", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.About.ForeColor = System.Drawing.Color.Black
-        Me.About.Location = New System.Drawing.Point(6, 1)
+        Me.About.Location = New System.Drawing.Point(5, 4)
         Me.About.Name = "About"
         Me.About.Size = New System.Drawing.Size(75, 23)
         Me.About.TabIndex = 17
@@ -179,13 +179,24 @@ Partial Class RFCalc
         Me.OutputAdded.Text = "000"
         Me.OutputAdded.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Mechanical", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(86, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'RFCalc
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(327, 456)
         Me.ControlBox = False
-        Me.Controls.Add(Me.OutputAdded)
+        Me.Controls.Add(Me.Calculate_Addition)
         Me.Controls.Add(Me.Pre_Points)
         Me.Controls.Add(Me.About)
         Me.Controls.Add(Me.Dock)
@@ -221,5 +232,5 @@ Partial Class RFCalc
     Friend WithEvents Dock As CheckBox
     Friend WithEvents About As Button
     Friend WithEvents Pre_Points As TextBox
-    Friend WithEvents OutputAdded As Label
+    Friend WithEvents Calculate_Addition As Button
 End Class
